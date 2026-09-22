@@ -5,6 +5,7 @@ import { initVideoSection } from './videoSection.js';
 import { initGallerySection } from './gallerySection.js';
 import { initGalleryModal } from './galleryModal.js';
 import { initRouteSection } from './routeSection.js';
+import { initFooterRipple } from './footerRipple.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,6 +24,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Initialize Scroll-Driven Mountain Route Journey Section
   initRouteSection();
+
+  // Initialize Footer Typography WebGL Water Ripple Effect
+  initFooterRipple();
 
   const header = document.getElementById('main-header');
 
