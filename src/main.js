@@ -4,6 +4,7 @@ import { initRevealSection } from './revealSection.js';
 import { initVideoSection } from './videoSection.js';
 import { initGallerySection } from './gallerySection.js';
 import { initGalleryModal } from './galleryModal.js';
+import { initRouteSection } from './routeSection.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,6 +20,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Initialize Gallery Detail Modal
   initGalleryModal();
+
+  // Initialize Scroll-Driven Mountain Route Journey Section
+  initRouteSection();
 
   const header = document.getElementById('main-header');
 
