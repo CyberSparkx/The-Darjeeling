@@ -118,17 +118,6 @@
         <!-- WebGL Canvas Mount -->
         <div id="reveal-canvas-container" class="absolute inset-0 w-full h-full"></div>
 
-        <!-- Glassmorphic Overlay Badges & Controls -->
-        <div class="absolute top-6 left-6 z-20 pointer-events-none flex items-center gap-3">
-          <div class="backdrop-blur-md bg-[#2b2721]/80 text-[#ece7dc] px-4 py-1.5 rounded-full text-xs font-mono tracking-widest uppercase flex items-center gap-2 shadow-lg">
-            <span class="w-2 h-2 rounded-full bg-[#9a6a3e] animate-pulse"></span>
-            GLSL Organic Liquid Mask
-          </div>
-          <span class="hidden sm:inline-block backdrop-blur-md bg-[#ece7dc]/80 text-[#2b2721] px-3 py-1.5 rounded-full text-xs font-mono tracking-wider shadow-sm">
-            Top: Sacred Flags · Inner: Ghum Station
-          </span>
-        </div>
-
         <!-- Bottom Interactive Hint Pill -->
         <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 pointer-events-none transition-opacity duration-500 group-hover:opacity-30 opacity-90">
           <div class="backdrop-blur-md bg-[#ece7dc]/90 text-[#2b2721] px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium tracking-wide shadow-xl border border-[#2b2721]/10 flex items-center gap-2">
@@ -147,6 +136,59 @@
         <div>ALTITUDE: 2,258 M (7,407 FT)</div>
         <div class="text-[#9a6a3e] font-semibold">THREE.JS / WEBGL / GLSL NOISE</div>
       </div>
+    </section>
+
+    <!-- Section 4: Scroll-Driven Fullscreen Expanding Video -->
+    <section id="video-expand-section" class="relative z-20 w-full min-h-screen bg-transparent border-t border-[#2b2721]/[0.08] flex items-center justify-center overflow-hidden">
+      
+      <!-- Sticky/Pinned Stage that expands -->
+      <div id="video-stage-container" class="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden">
+        
+        <!-- Video Heading (positioned above video, fades out on scroll) -->
+        <div id="video-header-block" class="absolute top-10 left-0 right-0 w-full max-w-7xl mx-auto px-6 md:px-12 z-20 flex flex-col sm:flex-row sm:items-end justify-between gap-4 transition-all duration-300 pointer-events-none">
+          <div class="space-y-1">
+            <span class="font-mono text-xs uppercase tracking-[0.25em] text-[#9a6a3e] font-semibold">
+              04 / Cinematic Chronicle
+            </span>
+            <h2 class="font-brand text-3xl sm:text-5xl lg:text-6xl font-bold text-[#2b2721] uppercase tracking-tight">
+              The Living Valley
+            </h2>
+          </div>
+          <p class="font-serif italic text-sm sm:text-base text-[#2b2721]/70 max-w-md sm:text-right">
+            Scroll down to immerse in the misty heights, ancient pine forests, and heritage tracks.
+          </p>
+        </div>
+
+        <!-- Expandable Video Card (Starts as prominent card, expands to fill 100vw x 100vh) -->
+        <div 
+          id="video-expand-wrapper"
+          class="relative w-[90vw] max-w-5xl h-[65vh] max-h-[700px] rounded-3xl overflow-hidden shadow-2xl transition-shadow duration-500 bg-black flex items-center justify-center will-change-transform z-10"
+        >
+          <!-- Video Element (Muted, Loop, Playsinline, Always plays continuously) -->
+          <video
+            id="darjeeling-scroll-video"
+            src="/landing-pages/video/video.mp4"
+            muted
+            autoplay
+            loop
+            playsinline
+            preload="auto"
+            class="w-full h-full object-cover block select-none pointer-events-none"
+          ></video>
+
+          <!-- Bottom Floating Center Indicator -->
+          <div class="video-inner-badge absolute bottom-6 left-1/2 -translate-x-1/2 z-20 pointer-events-none flex items-center gap-2 backdrop-blur-md bg-black/50 text-[#ece7dc]/90 px-4 py-2 rounded-full text-xs font-mono tracking-wider border border-white/10">
+            <svg class="w-3.5 h-3.5 text-[#9a6a3e] animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+            <span>Scroll to expand fullscreen</span>
+          </div>
+
+          <!-- Subtle Vignette Overlay for Cinematic Depth -->
+          <div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/40 via-transparent to-black/30"></div>
+        </div>
+      </div>
+
     </section>
 
     <!-- Canvas Placeholder -->

@@ -1,12 +1,16 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { initRevealSection } from './revealSection.js';
+import { initVideoSection } from './videoSection.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener('DOMContentLoaded', () => {
   // Initialize WebGL Organic Mask Reveal Section
   initRevealSection();
+
+  // Initialize Scroll-Driven Expanding Fullscreen Video Section
+  initVideoSection();
   const header = document.getElementById('main-header');
 
   // 1. Initial Page Entrance Stagger Animation
