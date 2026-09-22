@@ -95,18 +95,4 @@ export function initRouteSection() {
     ease: 'none',
     duration: 1,
   }, 0);
-
-  // C. Waypoint Pins Entrance Animation
-  gsap.from(['#svg-wp-siliguri', '#svg-wp-kurseong', '#svg-wp-darjeeling'], {
-    y: 20,
-    opacity: 0,
-    stagger: 0.15,
-    duration: 0.8,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: section,
-      start: 'top 75%',
-      toggleActions: 'play none none reverse',
-    }
-  });
 }
