@@ -45,13 +45,47 @@ window.addEventListener('DOMContentLoaded', () => {
       stagger: 0.12,
       clearProps: 'transform,opacity,visibility'
     })
-    .from(['.hero-sub', '.hero-heading', '.hero-desc'], {
+    .from(['.hero-sub', '.hero-heading', '.hero-desc', '.hero-badges'], {
       y: 35,
       autoAlpha: 0,
       duration: 1.0,
-      stagger: 0.15,
+      stagger: 0.12,
       clearProps: 'transform,opacity,visibility'
-    }, '-=0.4');
+    }, '-=0.4')
+    .from('.hero-portrait-wrapper', {
+      scale: 0.88,
+      y: 40,
+      autoAlpha: 0,
+      duration: 1.2,
+      ease: 'power3.out',
+      clearProps: 'transform,opacity,visibility'
+    }, '-=0.8');
+
+  // Hero Uncle Interactive Floating & Mouse Parallax
+  const uncleImg = document.getElementById('hero-uncle-img');
+  if (uncleImg) {
+    gsap.to(uncleImg, {
+      y: -8,
+      duration: 3,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut'
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      const xNorm = (e.clientX / window.innerWidth - 0.5) * 2;
+      const yNorm = (e.clientY / window.innerHeight - 0.5) * 2;
+
+      gsap.to(uncleImg, {
+        x: xNorm * 12,
+        y: yNorm * 8 - 4,
+        rotation: xNorm * 1.5,
+        duration: 0.8,
+        ease: 'power2.out',
+        overwrite: 'auto'
+      });
+    });
+  }
 
   // 2. Hide navbar upward on scroll down, show on scroll up
   if (header) {
