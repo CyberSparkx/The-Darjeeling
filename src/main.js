@@ -1,5 +1,8 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Lenis from 'lenis';
+import 'lenis/dist/lenis.css';
+
 import { initRevealSection } from './revealSection.js';
 import { initVideoSection } from './videoSection.js';
 import { initGallerySection } from './gallerySection.js';
@@ -12,6 +15,30 @@ import { initPreloader } from './preloader.js';
 gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener('DOMContentLoaded', () => {
+  // Initialize Lenis Smooth Scrolling
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    orientation: 'vertical',
+    gestureOrientation: 'vertical',
+    smoothWheel: true,
+    wheelMultiplier: 1.0,
+    touchMultiplier: 1.5,
+    infinite: false,
+  });
+
+  // Synchronize Lenis with GSAP ScrollTrigger
+  lenis.on('scroll', ScrollTrigger.update);
+
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+  });
+
+  gsap.ticker.lagSmoothing(0);
+
+  // Temporarily stop scroll during preloader
+  lenis.stop();
+
   // Initialize Hero Character WebGL Water Ripple
   initHeroRipple();
 
@@ -37,6 +64,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Page Entrance Stagger Animation triggered when Preloader curtain reveals
   const runEntranceAnimation = () => {
+    // Re-enable smooth scrolling
+    lenis.start();
+
     const entranceTl = gsap.timeline({
       defaults: {
         ease: 'power3.out',
