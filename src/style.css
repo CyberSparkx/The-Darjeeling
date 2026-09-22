@@ -423,13 +423,12 @@
 
 /* ── SVG Waypoints & City Typography ─────────────────────────────────────── */
 .svg-waypoint {
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
 }
 
 .svg-pin-img {
-  filter: drop-shadow(0 6px 12px rgba(43, 39, 33, 0.25)) drop-shadow(0 2px 4px rgba(200, 75, 49, 0.35));
-  transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transform-origin: center bottom;
+  filter: drop-shadow(0 4px 8px rgba(43, 39, 33, 0.3));
+  pointer-events: none;
 }
 
 .svg-city-title {
@@ -448,14 +447,9 @@
   letter-spacing: 0.05em;
 }
 
-/* Active Highlight when vehicle arrives */
+/* Subtle glow filter when vehicle arrives without changing coordinates */
 .active-wp .svg-pin-img {
-  transform: translateY(-8px) scale(1.18);
-  filter: drop-shadow(0 12px 20px rgba(230, 57, 70, 0.5));
-}
-
-.active-wp .svg-city-title {
-  fill: #2b2721 !important;
+  filter: drop-shadow(0 4px 12px rgba(230, 57, 70, 0.6));
 }
 
 .active-wp .svg-city-meta {
