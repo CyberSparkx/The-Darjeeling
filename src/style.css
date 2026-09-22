@@ -19,6 +19,24 @@
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     position: relative;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(43, 39, 33, 0.25) transparent;
+  }
+
+  /* Minimal custom scrollbar matching botanical sketchbook theme */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(43, 39, 33, 0.22);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(43, 39, 33, 0.45);
   }
 }
 
