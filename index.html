@@ -61,16 +61,30 @@
       </div>
     </main>
 
-    <!-- Additional Content Sections to enable scrolling -->
-    <section id="work" class="relative z-10 w-full min-h-screen flex flex-col justify-center px-6 md:px-16 border-t border-black/[0.06]">
-      <div class="max-w-4xl space-y-4">
-        <span class="font-mono text-xs uppercase tracking-widest text-zinc-400">01 / Selected Work</span>
-        <h2 class="font-brand text-4xl sm:text-6xl font-bold text-black uppercase">
-          Sculpting Realities
-        </h2>
-        <p class="text-zinc-600 text-base max-w-lg leading-relaxed">
-          Scroll down to see the transparent navbar smoothly hide, and scroll up just slightly to have it immediately return.
+    <!-- Section 2: ThreeUI MengToSketchbookLandingPage Interactive Heritage Sketchbook -->
+    <section id="sketchbook-section" class="relative z-10 w-full min-h-[950px] lg:min-h-screen bg-[#ece7dc] border-t border-black/[0.08] flex flex-col justify-start overflow-hidden">
+      <!-- Section Header / Architectural Bar -->
+      <div class="w-full max-w-7xl mx-auto px-6 md:px-12 pt-16 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-[0.25em] text-[#9a6a3e] font-semibold">02 / Archival Plates</span>
+          <h2 class="font-brand text-3xl sm:text-5xl font-bold text-[#2b2721] uppercase tracking-tight mt-1">
+            The Darjeeling Sketchbook
+          </h2>
+        </div>
+        <p class="font-serif italic text-base sm:text-lg text-[#2b2721]/70 max-w-md sm:text-right">
+          A tactile Himalayan sketchbook with curling page turns, draggable magnifying loupe, and vintage plates.
         </p>
+      </div>
+
+      <!-- ThreeUI Component Canvas Frame -->
+      <div class="relative w-full flex-1 min-h-[780px] lg:min-h-[850px] shader-frame">
+        <iframe 
+          id="sketchbook-frame"
+          src="/landing-pages/meng-to-sketchbook.html?embedded=1" 
+          class="w-full h-full min-h-[780px] lg:min-h-[850px] border-0 block" 
+          title="The Darjeeling — Heritage Sketchbook"
+          loading="lazy">
+        </iframe>
       </div>
     </section>
 
