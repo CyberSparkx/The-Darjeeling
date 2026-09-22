@@ -15,16 +15,19 @@ import { initPreloader } from './preloader.js';
 gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener('DOMContentLoaded', () => {
-  // Initialize Lenis Smooth Scrolling
+  // Initialize Lenis Ultra-Smooth Inertia Scrolling
   const lenis = new Lenis({
-    duration: 1.2,
+    lerp: 0.075,
+    duration: 1.6,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     orientation: 'vertical',
     gestureOrientation: 'vertical',
     smoothWheel: true,
-    wheelMultiplier: 1.0,
-    touchMultiplier: 1.5,
+    wheelMultiplier: 0.9,
+    touchMultiplier: 1.8,
     infinite: false,
+    syncTouch: true,
+    syncTouchLerp: 0.08
   });
 
   // Synchronize Lenis with GSAP ScrollTrigger
