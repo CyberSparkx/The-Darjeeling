@@ -26,24 +26,25 @@
   --track-nav:.06em;
 }
 *{box-sizing:border-box}
-html,body{margin:0;padding:0}
+html,body{margin:0;padding:0;overflow:hidden}
 html{-webkit-text-size-adjust:100%}
 body{
-  font-family:var(--font);font-weight:400;background:var(--paper);color:var(--ink);
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  font-family:var(--font);font-weight:400;background:transparent;color:var(--ink);
+  -webkit-font-smoothing:antialiased;overflow:hidden;
 }
+body.embedded{background:transparent}
 body.embedded .top{display:none}
-body.embedded .hero{padding-top:clamp(40px,6svh,70px);min-height:auto}
-body.embedded .wash{background-attachment:scroll}
+body.embedded .hero{padding:10px 0 20px;min-height:auto}
+body.embedded .wash{display:none}
+body.embedded .botany{display:none}
+body.embedded .bloom{display:none}
 a{color:inherit;text-decoration:none}
 button{font:inherit}
 ::selection{background:rgba(43,39,33,.85);color:var(--paper)}
 
 /* the painted ground the whole page sits on */
 .wash{
-  position:fixed;inset:0;z-index:-2;pointer-events:none;
-  background:url(meng-to-sketchbook/bg-wash.jpg) center top / cover no-repeat;
-  opacity:.85;
+  display:none;
 }
 .wash:after{
   content:"";position:absolute;inset:0;
