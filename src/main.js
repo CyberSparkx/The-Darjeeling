@@ -7,6 +7,7 @@ import { initGalleryModal } from './galleryModal.js';
 import { initRouteSection } from './routeSection.js';
 import { initFooterRipple } from './footerRipple.js';
 import { initHeroRipple } from './heroRipple.js';
+import { initPreloader } from './preloader.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,28 +35,33 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const header = document.getElementById('main-header');
 
-  // 1. Initial Page Entrance Stagger Animation (Text & nav only; Hero Character is visible from start)
-  const entranceTl = gsap.timeline({
-    defaults: {
-      ease: 'power3.out',
-    }
-  });
+  // Page Entrance Stagger Animation triggered when Preloader curtain reveals
+  const runEntranceAnimation = () => {
+    const entranceTl = gsap.timeline({
+      defaults: {
+        ease: 'power3.out',
+      }
+    });
 
-  entranceTl
-    .from('.nav-elem', {
-      y: -25,
-      autoAlpha: 0,
-      duration: 0.9,
-      stagger: 0.12,
-      clearProps: 'transform,opacity,visibility'
-    })
-    .from(['.hero-sub', '.hero-heading', '.hero-desc', '.hero-badges'], {
-      y: 35,
-      autoAlpha: 0,
-      duration: 1.0,
-      stagger: 0.12,
-      clearProps: 'transform,opacity,visibility'
-    }, '-=0.4');
+    entranceTl
+      .from('.nav-elem', {
+        y: -25,
+        autoAlpha: 0,
+        duration: 0.9,
+        stagger: 0.12,
+        clearProps: 'transform,opacity,visibility'
+      })
+      .from(['.hero-sub', '.hero-heading', '.hero-desc', '.hero-badges'], {
+        y: 35,
+        autoAlpha: 0,
+        duration: 1.0,
+        stagger: 0.12,
+        clearProps: 'transform,opacity,visibility'
+      }, '-=0.4');
+  };
+
+  // Launch Preloader with callback on 5-column reveal completion
+  initPreloader(runEntranceAnimation);
 
   // 2. Hide navbar upward on scroll down, show on scroll up
   if (header) {

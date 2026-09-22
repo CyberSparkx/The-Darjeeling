@@ -14,6 +14,43 @@
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body class="bg-[#ece7dc] text-[#2b2721] selection:bg-[#2b2721] selection:text-[#ece7dc] relative">
+    <!-- Fullscreen Preloader Overlay with 5-Column Staggered Curtain Reveal -->
+    <div id="preloader" class="fixed inset-0 z-[99999] flex flex-col items-center justify-center overflow-hidden">
+      <!-- 5 Vertical Curtain Columns -->
+      <div class="preloader-curtains absolute inset-0 w-full h-full flex pointer-events-none z-0">
+        <div class="preloader-col w-1/5 h-full border-r border-[#2b2721]/[0.08]"></div>
+        <div class="preloader-col w-1/5 h-full border-r border-[#2b2721]/[0.08]"></div>
+        <div class="preloader-col w-1/5 h-full border-r border-[#2b2721]/[0.08]"></div>
+        <div class="preloader-col w-1/5 h-full border-r border-[#2b2721]/[0.08]"></div>
+        <div class="preloader-col w-1/5 h-full"></div>
+      </div>
+
+      <!-- Center Content Container -->
+      <div id="preloader-content" class="relative z-10 flex flex-col items-center justify-center text-center px-6 select-none pointer-events-none">
+        <!-- Greeting Stage: नमस्ते / NAMASTE -->
+        <div id="preloader-greeting" class="flex flex-col items-center justify-center gap-1.5 absolute">
+          <span class="text-4xl sm:text-5xl font-serif text-[#2b2721] tracking-wide font-normal">
+            नमस्ते
+          </span>
+          <span class="font-brand font-bold text-lg sm:text-xl tracking-[0.25em] text-[#9a6a3e] uppercase">
+            NAMASTE
+          </span>
+        </div>
+
+        <!-- Percentage Counter & Author Statement -->
+        <div id="preloader-counter-wrapper" class="flex flex-col items-center justify-center gap-3">
+          <div class="font-mono text-sm sm:text-base tracking-widest text-[#9a6a3e] font-bold">
+            <span id="preloader-percent">0</span>%
+          </div>
+
+          <!-- Creator Statement matching reference -->
+          <p class="font-brand text-xs sm:text-sm tracking-[0.22em] text-[#2b2721]/90 uppercase font-medium">
+            <strong class="font-bold text-[#2b2721]">DESIGNED. CODED. LOVED.</strong> BY <span class="text-[#9a6a3e] font-bold underline decoration-[#9a6a3e]/40 underline-offset-4">NAREN ROY</span>.
+          </p>
+        </div>
+      </div>
+    </div>
+
     <!-- Botanical paper wash background unified across the entire site -->
     <div class="site-wash" aria-hidden="true"></div>
 
