@@ -52,8 +52,8 @@ export function initRouteSection() {
         const p = self.progress;
 
         // Dynamic Telemetry Calculation
-        // Distance: 0 to 77 km (NH 55 Hill Cart Road length)
-        const dist = (p * 77).toFixed(1);
+        // Distance: 0 to 76.5 km (Google Maps / NH 110 Hill Cart Road length)
+        const dist = (p * 76.5).toFixed(1);
         if (distValue) distValue.textContent = `${dist} KM`;
 
         // Altitude: 120m (Siliguri) to 2,042m (Darjeeling)
