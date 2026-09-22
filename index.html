@@ -13,14 +13,16 @@
     />
     <link rel="stylesheet" href="/src/style.css" />
   </head>
-  <body class="bg-[#f7f7f8] text-[#111111] selection:bg-black selection:text-white">
+  <body class="bg-[#ece7dc] text-[#2b2721] selection:bg-[#2b2721] selection:text-[#ece7dc] relative">
+    <!-- Botanical paper wash background unified across the entire site -->
+    <div class="site-wash" aria-hidden="true"></div>
 
     <!-- Transparent Navigation Bar with Auto-Hide on Scroll Down & Reveal on Scroll Up -->
     <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-colors duration-300">
       <div class="max-w-7xl mx-auto px-6 py-6 md:px-12 flex items-center justify-between">
         
         <!-- Left: Brand Logo in bold uppercase -->
-        <a href="#" class="nav-elem font-brand text-xl sm:text-2xl font-bold tracking-tight text-black uppercase hover:opacity-80 transition-opacity">
+        <a href="#" class="nav-elem font-brand text-xl sm:text-2xl font-bold tracking-tight text-[#2b2721] uppercase hover:opacity-80 transition-opacity">
           The Darjeeling
         </a>
 
@@ -29,7 +31,7 @@
           <!-- Contact Navigation Item -->
           <a
             href="#contact"
-            class="nav-elem nav-text-link text-xs font-semibold uppercase tracking-wider text-zinc-600 hover:text-black"
+            class="nav-elem nav-text-link text-xs font-semibold uppercase tracking-wider text-[#2b2721]/75 hover:text-[#2b2721]"
           >
             Contact
           </a>
@@ -37,7 +39,7 @@
           <!-- Log In Button (matching Lumora high-contrast button) -->
           <a
             href="#login"
-            class="nav-elem px-5 py-2 text-xs font-semibold uppercase tracking-wider text-white bg-black hover:bg-zinc-800 transition-colors duration-200 active:scale-95 shadow-sm"
+            class="nav-elem px-5 py-2 text-xs font-semibold uppercase tracking-wider text-[#ece7dc] bg-[#2b2721] hover:bg-black transition-colors duration-200 active:scale-95 shadow-sm"
           >
             Log In
           </a>
@@ -46,23 +48,27 @@
       </div>
     </header>
 
-    <!-- Hero Section (Clean Crisp Light Background) -->
-    <main class="relative z-10 w-full min-h-screen flex flex-col justify-center px-6 md:px-16 pt-20">
-      <div class="max-w-4xl space-y-6">
-        <p class="hero-sub font-mono text-xs uppercase tracking-[0.25em] text-zinc-500 font-medium">
+    <!-- Hero Section (Botanical & Archival Aesthetic) -->
+    <main class="relative z-10 w-full min-h-screen flex flex-col justify-center px-6 md:px-16 pt-20 overflow-hidden">
+      <!-- Leaf sketches in Hero section matching sketchbook -->
+      <img class="site-botany site-botany-left" src="/landing-pages/meng-to-sketchbook/botany-left.png" alt="" aria-hidden="true" />
+      <img class="site-botany site-botany-right" src="/landing-pages/meng-to-sketchbook/botany-right.png" alt="" aria-hidden="true" />
+
+      <div class="max-w-4xl space-y-6 relative z-10">
+        <p class="hero-sub font-mono text-xs uppercase tracking-[0.25em] text-[#9a6a3e] font-semibold">
           Digital Atelier & Engineering
         </p>
-        <h1 class="hero-heading font-brand text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-black uppercase leading-[0.95]">
+        <h1 class="hero-heading font-brand text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-[#2b2721] uppercase leading-[0.95]">
           The Darjeeling
         </h1>
-        <p class="hero-desc text-base sm:text-lg text-zinc-600 max-w-xl font-normal leading-relaxed">
+        <p class="hero-desc text-base sm:text-lg text-[#2b2721]/80 max-w-xl font-normal leading-relaxed">
           Crafting next-generation 3D interactive experiences with minimal aesthetics and high-performance WebGL.
         </p>
       </div>
     </main>
 
     <!-- Section 2: ThreeUI MengToSketchbookLandingPage Interactive Heritage Sketchbook -->
-    <section id="sketchbook-section" class="relative z-10 w-full min-h-[950px] lg:min-h-screen bg-[#ece7dc] border-t border-black/[0.08] flex flex-col justify-start overflow-hidden">
+    <section id="sketchbook-section" class="relative z-10 w-full min-h-[950px] lg:min-h-screen bg-transparent border-t border-[#2b2721]/[0.08] flex flex-col justify-start overflow-hidden">
       <!-- Section Header / Architectural Bar -->
       <div class="w-full max-w-7xl mx-auto px-6 md:px-12 pt-16 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
