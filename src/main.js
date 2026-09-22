@@ -2,6 +2,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { initRevealSection } from './revealSection.js';
 import { initVideoSection } from './videoSection.js';
+import { initGallerySection } from './gallerySection.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,6 +12,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Initialize Scroll-Driven Expanding Fullscreen Video Section
   initVideoSection();
+
+  // Initialize WebGL Water Ripple Gallery Section
+  initGallerySection();
+
   const header = document.getElementById('main-header');
 
   // 1. Initial Page Entrance Stagger Animation
