@@ -3,11 +3,80 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blank Canvas</title>
+    <title>The Darjeeling</title>
+    <!-- Maximum 2 curated Google Fonts: Space Grotesk (Brand & Headings) + Inter (Clean UI & Nav) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/src/style.css" />
   </head>
-  <body>
+  <body class="bg-[#f7f7f8] text-[#111111] selection:bg-black selection:text-white">
+
+    <!-- Transparent Navigation Bar with Auto-Hide on Scroll Down & Reveal on Scroll Up -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-6 py-6 md:px-12 flex items-center justify-between">
+        
+        <!-- Left: Brand Logo in bold uppercase -->
+        <a href="#" class="nav-elem font-brand text-xl sm:text-2xl font-bold tracking-tight text-black uppercase hover:opacity-80 transition-opacity">
+          The Darjeeling
+        </a>
+
+        <!-- Right Side: Contact Link & Clean Square/Subtle-Rounded Login Button -->
+        <div class="flex items-center gap-6 sm:gap-8">
+          <!-- Contact Navigation Item -->
+          <a
+            href="#contact"
+            class="nav-elem nav-text-link text-xs font-semibold uppercase tracking-wider text-zinc-600 hover:text-black"
+          >
+            Contact
+          </a>
+
+          <!-- Log In Button (matching Lumora high-contrast button) -->
+          <a
+            href="#login"
+            class="nav-elem px-5 py-2 text-xs font-semibold uppercase tracking-wider text-white bg-black hover:bg-zinc-800 transition-colors duration-200 active:scale-95 shadow-sm"
+          >
+            Log In
+          </a>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- Hero Section (Clean Crisp Light Background) -->
+    <main class="relative z-10 w-full min-h-screen flex flex-col justify-center px-6 md:px-16 pt-20">
+      <div class="max-w-4xl space-y-6">
+        <p class="hero-sub font-mono text-xs uppercase tracking-[0.25em] text-zinc-500 font-medium">
+          Digital Atelier & Engineering
+        </p>
+        <h1 class="hero-heading font-brand text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-black uppercase leading-[0.95]">
+          The Darjeeling
+        </h1>
+        <p class="hero-desc text-base sm:text-lg text-zinc-600 max-w-xl font-normal leading-relaxed">
+          Crafting next-generation 3D interactive experiences with minimal aesthetics and high-performance WebGL.
+        </p>
+      </div>
+    </main>
+
+    <!-- Additional Content Sections to enable scrolling -->
+    <section id="work" class="relative z-10 w-full min-h-screen flex flex-col justify-center px-6 md:px-16 border-t border-black/[0.06]">
+      <div class="max-w-4xl space-y-4">
+        <span class="font-mono text-xs uppercase tracking-widest text-zinc-400">01 / Selected Work</span>
+        <h2 class="font-brand text-4xl sm:text-6xl font-bold text-black uppercase">
+          Sculpting Realities
+        </h2>
+        <p class="text-zinc-600 text-base max-w-lg leading-relaxed">
+          Scroll down to see the transparent navbar smoothly hide, and scroll up just slightly to have it immediately return.
+        </p>
+      </div>
+    </section>
+
+    <!-- Canvas Placeholder -->
     <canvas id="canvas"></canvas>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
