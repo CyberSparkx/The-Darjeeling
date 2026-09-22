@@ -191,114 +191,107 @@
 
     </section>
 
-    <!-- Section 5: Archival Gallery — WebGL Water Ripple -->
+    <!-- Section 5: Modern Gallery — WebGL Water Ripple -->
     <section
       id="gallery-section"
-      class="relative z-10 w-full min-h-screen bg-transparent border-t border-[#2b2721]/[0.08] py-20 px-6 md:px-12 overflow-hidden"
+      class="relative z-10 w-full bg-transparent border-t border-[#2b2721]/[0.08] py-20 px-6 md:px-12 overflow-hidden"
     >
       <!-- Section Header -->
       <div class="w-full max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
         <div class="space-y-2">
           <span class="font-mono text-xs uppercase tracking-[0.25em] text-[#9a6a3e] font-semibold">
-            05 / Archival Visions
+            05 / Living Frames
           </span>
           <h2 class="font-brand text-3xl sm:text-5xl lg:text-6xl font-bold text-[#2b2721] uppercase tracking-tight">
-            Through the Glass
+            Darjeeling, Now
           </h2>
         </div>
         <p class="font-serif italic text-base sm:text-lg text-[#2b2721]/70 max-w-md sm:text-right">
-          Move your cursor over each plate — let the water surface wake and ripple beneath the Victorian lens.
+          Move your cursor — let the water wake beneath each frame. The hills, living and breathing.
         </p>
       </div>
 
-      <!-- 2×2 Gallery Grid — each canvas is a Three.js water ripple card -->
-      <div class="w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+      <!-- 2×2 Gallery Grid — Instagram 4:5 portrait ratio -->
+      <div class="w-full max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
 
-        <!-- Card 0: Darjeeling Bazaar -->
-        <div class="gallery-card group relative flex flex-col rounded-2xl overflow-hidden border border-[#2b2721]/12 shadow-xl bg-[#1a1714]">
-          <div class="relative w-full aspect-[4/3] overflow-hidden cursor-crosshair">
+        <!-- Card 0: Darjeeling & Kanchenjunga -->
+        <div class="gallery-card group relative flex flex-col rounded-2xl overflow-hidden border border-[#2b2721]/12 shadow-xl bg-[#0d0d0d]">
+          <!-- Instagram 4:5 portrait ratio -->
+          <div class="relative w-full aspect-[4/5] overflow-hidden cursor-crosshair">
             <canvas
               id="gallery-canvas-0"
               class="absolute inset-0 w-full h-full block"
-              aria-label="Darjeeling Bazaar — archival photograph"
+              aria-label="Darjeeling and Kanchenjunga"
             ></canvas>
           </div>
-          <div class="gallery-card-info px-5 py-4 flex items-start justify-between gap-4 bg-[#1a1714]">
-            <div>
-              <h3 class="font-brand text-base sm:text-lg font-bold text-[#ece7dc] uppercase tracking-tight leading-snug">
-                Darjeeling Bazaar
-              </h3>
-              <p class="font-serif italic text-xs text-[#9a6a3e]/90 mt-0.5">
-                The bustling heart of colonial Darjeeling, where hill traders gathered beneath timber facades.
-              </p>
-            </div>
-            <span class="font-mono text-xs text-[#ece7dc]/40 shrink-0 pt-0.5 tracking-wider">c. 1890</span>
+          <div class="gallery-card-info px-4 py-3 flex flex-col gap-1 bg-[#0d0d0d]">
+            <h3 class="font-brand text-sm font-bold text-[#ece7dc] uppercase tracking-tight leading-snug">
+              Darjeeling &amp; Kanchenjunga
+            </h3>
+            <p class="font-serif italic text-[11px] text-[#ece7dc]/70 leading-snug">
+              The colourful hillside town glows beneath the eternal white crown of Kanchenjunga.
+            </p>
+            <span class="font-mono text-[10px] text-[#ece7dc]/30 tracking-wider mt-1">Present Day</span>
           </div>
         </div>
 
-        <!-- Card 1: The Loop No. 3 -->
-        <div class="gallery-card group relative flex flex-col rounded-2xl overflow-hidden border border-[#2b2721]/12 shadow-xl bg-[#1a1714]">
-          <div class="relative w-full aspect-[4/3] overflow-hidden cursor-crosshair">
+        <!-- Card 1: Ghum Station at Dawn -->
+        <div class="gallery-card group relative flex flex-col rounded-2xl overflow-hidden border border-[#2b2721]/12 shadow-xl bg-[#0d0d0d]">
+          <div class="relative w-full aspect-[4/5] overflow-hidden cursor-crosshair">
             <canvas
               id="gallery-canvas-1"
               class="absolute inset-0 w-full h-full block"
-              aria-label="The Loop No. 3 — Darjeeling Himalayan Railway"
+              aria-label="Ghum Station at Dawn"
             ></canvas>
           </div>
-          <div class="gallery-card-info px-5 py-4 flex items-start justify-between gap-4 bg-[#1a1714]">
-            <div>
-              <h3 class="font-brand text-base sm:text-lg font-bold text-[#ece7dc] uppercase tracking-tight leading-snug">
-                The Loop — No. 3
-              </h3>
-              <p class="font-serif italic text-xs text-[#9a6a3e]/90 mt-0.5">
-                Agony Point near Tindharia — the legendary spiral where the DHR climbs its own track.
-              </p>
-            </div>
-            <span class="font-mono text-xs text-[#ece7dc]/40 shrink-0 pt-0.5 tracking-wider">c. 1895</span>
+          <div class="gallery-card-info px-4 py-3 flex flex-col gap-1 bg-[#0d0d0d]">
+            <h3 class="font-brand text-sm font-bold text-[#ece7dc] uppercase tracking-tight leading-snug">
+              Ghum Station at Dawn
+            </h3>
+            <p class="font-serif italic text-[11px] text-[#ece7dc]/70 leading-snug">
+              Amber headlights pierce the monsoon mist at India's highest railway station — 2,258 m.
+            </p>
+            <span class="font-mono text-[10px] text-[#ece7dc]/30 tracking-wider mt-1">Present Day</span>
           </div>
         </div>
 
-        <!-- Card 2: Kanchenjunga Vista -->
-        <div class="gallery-card group relative flex flex-col rounded-2xl overflow-hidden border border-[#2b2721]/12 shadow-xl bg-[#1a1714]">
-          <div class="relative w-full aspect-[4/3] overflow-hidden cursor-crosshair">
+        <!-- Card 2: Kurseong by Night -->
+        <div class="gallery-card group relative flex flex-col rounded-2xl overflow-hidden border border-[#2b2721]/12 shadow-xl bg-[#0d0d0d]">
+          <div class="relative w-full aspect-[4/5] overflow-hidden cursor-crosshair">
             <canvas
               id="gallery-canvas-2"
               class="absolute inset-0 w-full h-full block"
-              aria-label="Kanchenjunga Vista — Himalayan peak"
+              aria-label="Kurseong by Night"
             ></canvas>
           </div>
-          <div class="gallery-card-info px-5 py-4 flex items-start justify-between gap-4 bg-[#1a1714]">
-            <div>
-              <h3 class="font-brand text-base sm:text-lg font-bold text-[#ece7dc] uppercase tracking-tight leading-snug">
-                Kanchenjunga Vista
-              </h3>
-              <p class="font-serif italic text-xs text-[#9a6a3e]/90 mt-0.5">
-                The world's third-highest peak rising behind dense Himalayan pine, eternal and immovable.
-              </p>
-            </div>
-            <span class="font-mono text-xs text-[#ece7dc]/40 shrink-0 pt-0.5 tracking-wider">c. 1900</span>
+          <div class="gallery-card-info px-4 py-3 flex flex-col gap-1 bg-[#0d0d0d]">
+            <h3 class="font-brand text-sm font-bold text-[#ece7dc] uppercase tracking-tight leading-snug">
+              Kurseong by Night
+            </h3>
+            <p class="font-serif italic text-[11px] text-[#ece7dc]/70 leading-snug">
+              The city of white orchids sparkles against the Himalayan dark — a galaxy on the hillside.
+            </p>
+            <span class="font-mono text-[10px] text-[#ece7dc]/30 tracking-wider mt-1">Present Day</span>
           </div>
         </div>
 
-        <!-- Card 3: Chowk Bazaar -->
-        <div class="gallery-card group relative flex flex-col rounded-2xl overflow-hidden border border-[#2b2721]/12 shadow-xl bg-[#1a1714]">
-          <div class="relative w-full aspect-[4/3] overflow-hidden cursor-crosshair">
+        <!-- Card 3: The Golden Monastery -->
+        <div class="gallery-card group relative flex flex-col rounded-2xl overflow-hidden border border-[#2b2721]/12 shadow-xl bg-[#0d0d0d]">
+          <div class="relative w-full aspect-[4/5] overflow-hidden cursor-crosshair">
             <canvas
               id="gallery-canvas-3"
               class="absolute inset-0 w-full h-full block"
-              aria-label="Chowk Bazaar — open air market Darjeeling"
+              aria-label="The Golden Monastery, Siliguri"
             ></canvas>
           </div>
-          <div class="gallery-card-info px-5 py-4 flex items-start justify-between gap-4 bg-[#1a1714]">
-            <div>
-              <h3 class="font-brand text-base sm:text-lg font-bold text-[#ece7dc] uppercase tracking-tight leading-snug">
-                Chowk Bazaar
-              </h3>
-              <p class="font-serif italic text-xs text-[#9a6a3e]/90 mt-0.5">
-                Open-air trading at Darjeeling's lower market — a mosaic of traders, monks, and merchants.
-              </p>
-            </div>
-            <span class="font-mono text-xs text-[#ece7dc]/40 shrink-0 pt-0.5 tracking-wider">c. 1905</span>
+          <div class="gallery-card-info px-4 py-3 flex flex-col gap-1 bg-[#0d0d0d]">
+            <h3 class="font-brand text-sm font-bold text-[#ece7dc] uppercase tracking-tight leading-snug">
+              The Golden Monastery
+            </h3>
+            <p class="font-serif italic text-[11px] text-[#ece7dc]/70 leading-snug">
+              Druk Sangag Choling blazes at dusk, its gilded rooftops catching the last rays of the valley.
+            </p>
+            <span class="font-mono text-[10px] text-[#ece7dc]/30 tracking-wider mt-1">Present Day</span>
           </div>
         </div>
 
@@ -306,7 +299,7 @@
 
       <!-- Section footer watermark -->
       <div class="w-full max-w-7xl mx-auto mt-10 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-[#2b2721]/50 tracking-wider">
-        <div>COLLECTION: 4 ARCHIVAL PLATES · 1890–1905</div>
+        <div>COLLECTION: 4 FRAMES · DARJEELING HILLS · PRESENT DAY</div>
         <div class="text-[#9a6a3e] font-semibold">THREE.JS / GLSL WATER RIPPLE</div>
       </div>
     </section>
