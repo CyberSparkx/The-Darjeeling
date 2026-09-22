@@ -6,10 +6,14 @@ import { initGallerySection } from './gallerySection.js';
 import { initGalleryModal } from './galleryModal.js';
 import { initRouteSection } from './routeSection.js';
 import { initFooterRipple } from './footerRipple.js';
+import { initHeroRipple } from './heroRipple.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener('DOMContentLoaded', () => {
+  // Initialize Hero Character WebGL Water Ripple
+  initHeroRipple();
+
   // Initialize WebGL Organic Mask Reveal Section
   initRevealSection();
 
@@ -30,7 +34,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const header = document.getElementById('main-header');
 
-  // 1. Initial Page Entrance Stagger Animation
+  // 1. Initial Page Entrance Stagger Animation (Text & nav only; Hero Character is visible from start)
   const entranceTl = gsap.timeline({
     defaults: {
       ease: 'power3.out',
@@ -51,41 +55,7 @@ window.addEventListener('DOMContentLoaded', () => {
       duration: 1.0,
       stagger: 0.12,
       clearProps: 'transform,opacity,visibility'
-    }, '-=0.4')
-    .from('.hero-portrait-wrapper', {
-      scale: 0.88,
-      y: 40,
-      autoAlpha: 0,
-      duration: 1.2,
-      ease: 'power3.out',
-      clearProps: 'transform,opacity,visibility'
-    }, '-=0.8');
-
-  // Hero Uncle Interactive Floating & Mouse Parallax
-  const uncleImg = document.getElementById('hero-uncle-img');
-  if (uncleImg) {
-    gsap.to(uncleImg, {
-      y: -8,
-      duration: 3,
-      repeat: -1,
-      yoyo: true,
-      ease: 'sine.inOut'
-    });
-
-    window.addEventListener('mousemove', (e) => {
-      const xNorm = (e.clientX / window.innerWidth - 0.5) * 2;
-      const yNorm = (e.clientY / window.innerHeight - 0.5) * 2;
-
-      gsap.to(uncleImg, {
-        x: xNorm * 12,
-        y: yNorm * 8 - 4,
-        rotation: xNorm * 1.5,
-        duration: 0.8,
-        ease: 'power2.out',
-        overwrite: 'auto'
-      });
-    });
-  }
+    }, '-=0.4');
 
   // 2. Hide navbar upward on scroll down, show on scroll up
   if (header) {

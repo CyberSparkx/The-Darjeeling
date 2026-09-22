@@ -54,9 +54,9 @@
       <img class="site-botany site-botany-left" src="/landing-pages/meng-to-sketchbook/botany-left.png" alt="" aria-hidden="true" />
       <img class="site-botany site-botany-right" src="/landing-pages/meng-to-sketchbook/botany-right.png" alt="" aria-hidden="true" />
 
-      <div class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center relative z-10">
+      <div class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center relative z-10">
         <!-- Left: Text content -->
-        <div class="lg:col-span-7 space-y-6">
+        <div class="lg:col-span-6 space-y-6 z-20">
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#2b2721]/[0.05] border border-[#2b2721]/10 hero-sub">
             <span class="w-2 h-2 rounded-full bg-[#9a6a3e] animate-pulse"></span>
             <span class="font-mono text-xs uppercase tracking-[0.2em] text-[#9a6a3e] font-semibold">
@@ -89,19 +89,15 @@
           </div>
         </div>
 
-        <!-- Right: Local Uncle Watercolor Character Illustration with Interactive Parallax / Floating Animation -->
-        <div class="lg:col-span-5 flex items-center justify-center lg:justify-end">
-          <div class="hero-portrait-wrapper relative group select-none max-w-[360px] sm:max-w-[420px] lg:max-w-[460px]">
-            <!-- Soft radiant ambient glow behind illustration -->
-            <div class="absolute -inset-4 rounded-full bg-[#9a6a3e]/10 blur-2xl pointer-events-none transition-transform duration-700 group-hover:scale-110"></div>
-            
-            <!-- Character Image -->
-            <img 
-              id="hero-uncle-img"
-              src="/landing-pages/img/uncle.png" 
-              alt="Darjeeling greeting - Kasto Cha?" 
-              class="relative z-10 w-full h-auto object-contain drop-shadow-2xl transition-transform duration-500 will-change-transform group-hover:scale-105"
-            />
+        <!-- Right: Prominent Doubled-Size Uncle Character with WebGL Water Ripple (Active from start) -->
+        <div class="lg:col-span-6 flex items-center justify-center lg:justify-end z-10">
+          <div class="hero-portrait-wrapper relative select-none w-full max-w-[520px] sm:max-w-[620px] lg:max-w-[720px] xl:max-w-[800px] aspect-[515/485] cursor-crosshair">
+            <!-- WebGL Canvas for Interactive Water Ripple -->
+            <canvas 
+              id="hero-uncle-canvas"
+              class="w-full h-full block relative z-10"
+              aria-label="Darjeeling greeting - Kasto Cha?"
+            ></canvas>
           </div>
         </div>
       </div>
