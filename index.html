@@ -95,6 +95,60 @@
       </div>
     </section>
 
+    <!-- Section 3: Interactive WebGL Organic Mask Reveal (Flags & Ghum Station) -->
+    <section id="reveal-section" class="relative z-10 w-full min-h-screen bg-transparent border-t border-[#2b2721]/[0.08] py-20 px-6 md:px-12 flex flex-col justify-center items-center">
+      <!-- Section Header -->
+      <div class="w-full max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
+        <div class="space-y-2">
+          <span class="font-mono text-xs uppercase tracking-[0.25em] text-[#9a6a3e] font-semibold">
+            03 / WebGL Organic Lens
+          </span>
+          <h2 class="font-brand text-3xl sm:text-5xl lg:text-6xl font-bold text-[#2b2721] uppercase tracking-tight">
+            Piercing The Veil
+          </h2>
+        </div>
+        <p class="font-serif italic text-base sm:text-lg text-[#2b2721]/70 max-w-md sm:text-right">
+          Hover across the sacred Buddhist prayer flags to reveal India's highest heritage railway sanctuary — Ghum Station.
+        </p>
+      </div>
+
+      <!-- Interactive WebGL Canvas Container with Tailwind Styling -->
+      <div class="relative w-full max-w-7xl aspect-[16/10] md:aspect-[21/10] rounded-2xl overflow-hidden shadow-2xl border border-[#2b2721]/15 group cursor-crosshair bg-[#ded8cb]">
+        
+        <!-- WebGL Canvas Mount -->
+        <div id="reveal-canvas-container" class="absolute inset-0 w-full h-full"></div>
+
+        <!-- Glassmorphic Overlay Badges & Controls -->
+        <div class="absolute top-6 left-6 z-20 pointer-events-none flex items-center gap-3">
+          <div class="backdrop-blur-md bg-[#2b2721]/80 text-[#ece7dc] px-4 py-1.5 rounded-full text-xs font-mono tracking-widest uppercase flex items-center gap-2 shadow-lg">
+            <span class="w-2 h-2 rounded-full bg-[#9a6a3e] animate-pulse"></span>
+            GLSL Organic Liquid Mask
+          </div>
+          <span class="hidden sm:inline-block backdrop-blur-md bg-[#ece7dc]/80 text-[#2b2721] px-3 py-1.5 rounded-full text-xs font-mono tracking-wider shadow-sm">
+            Top: Sacred Flags · Inner: Ghum Station
+          </span>
+        </div>
+
+        <!-- Bottom Interactive Hint Pill -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 pointer-events-none transition-opacity duration-500 group-hover:opacity-30 opacity-90">
+          <div class="backdrop-blur-md bg-[#ece7dc]/90 text-[#2b2721] px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium tracking-wide shadow-xl border border-[#2b2721]/10 flex items-center gap-2">
+            <svg class="w-4 h-4 text-[#9a6a3e] animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+            </svg>
+            <span>Move cursor to reveal Ghum Station</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Architectural Section Footer Metadata -->
+      <div class="w-full max-w-7xl mx-auto mt-8 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-[#2b2721]/60 tracking-wider">
+        <div>COORDINATES: 27.0267° N, 88.2464° E</div>
+        <div>ALTITUDE: 2,258 M (7,407 FT)</div>
+        <div class="text-[#9a6a3e] font-semibold">THREE.JS / WEBGL / GLSL NOISE</div>
+      </div>
+    </section>
+
     <!-- Canvas Placeholder -->
     <canvas id="canvas"></canvas>
 
