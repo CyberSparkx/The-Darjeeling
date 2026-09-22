@@ -26,9 +26,9 @@
       </div>
 
       <!-- Center Content Container -->
-      <div id="preloader-content" class="relative z-10 flex flex-col items-center justify-center text-center px-6 select-none pointer-events-none">
+      <div id="preloader-content" class="relative z-10 w-full flex flex-col items-center justify-center text-center px-6 select-none pointer-events-none min-h-[160px]">
         <!-- Greeting Stage: नमस्ते / NAMASTE -->
-        <div id="preloader-greeting" class="flex flex-col items-center justify-center gap-1.5 absolute">
+        <div id="preloader-greeting" class="flex flex-col items-center justify-center gap-1.5 opacity-0">
           <span class="text-4xl sm:text-5xl font-serif text-[#2b2721] tracking-wide font-normal">
             नमस्ते
           </span>
@@ -38,7 +38,7 @@
         </div>
 
         <!-- Percentage Counter & Author Statement -->
-        <div id="preloader-counter-wrapper" class="flex flex-col items-center justify-center gap-3">
+        <div id="preloader-counter-wrapper" class="flex flex-col items-center justify-center gap-3 opacity-0" style="display: none;">
           <div class="font-mono text-sm sm:text-base tracking-widest text-[#9a6a3e] font-bold">
             <span id="preloader-percent">0</span>%
           </div>

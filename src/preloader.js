@@ -1,11 +1,11 @@
 /**
  * preloader.js — Archival 5-Column Staggered Curtain Preloader
  * ─────────────────────────────────────────────────────────────────────────────
- * 1. Shows cultural greeting "नमस्ते / NAMASTE" followed by smooth percentage
- *    loading progress and author tribute "DESIGNED. CODED. LOVED. BY NAREN ROY."
- * 2. Tracks window load and critical page assets.
- * 3. On 100% completion, lifts 5 vertical curtain columns upward at independent
- *    paces, revealing the hero section underneath.
+ * 1. Step 1: Shows cultural greeting "नमस्ते / NAMASTE" cleanly centered.
+ * 2. Step 2: Smoothly transitions exclusively to the percentage counter
+ *    "0% -> 100%" and author tribute "DESIGNED. CODED. LOVED. BY NAREN ROY."
+ * 3. Step 3: Once 100% and window assets are ready, lifts 5 vertical curtain
+ *    columns upward with staggered, independent speeds, unveiling the hero.
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
@@ -18,12 +18,12 @@ export function initPreloader(onCompleteCallback) {
   const counterWrapperEl = document.getElementById('preloader-counter-wrapper');
   const columns = document.querySelectorAll('.preloader-col');
 
-  if (!preloader || !percentEl || columns.length === 0) {
+  if (!preloader || !percentEl || !greetingEl || !counterWrapperEl || columns.length === 0) {
     if (typeof onCompleteCallback === 'function') onCompleteCallback();
     return;
   }
 
-  // Disable page scroll during loading
+  // Prevent scroll during loading
   document.body.style.overflow = 'hidden';
 
   const progressObj = { value: 0 };
@@ -38,42 +38,44 @@ export function initPreloader(onCompleteCallback) {
     });
   }
 
-  // Preloader GSAP Timeline
-  const tl = gsap.timeline();
-
-  // 1. Initial State: Greeting visible, Counter hidden or staggered in
+  // Ensure initial clean state
+  greetingEl.style.display = 'flex';
+  counterWrapperEl.style.display = 'none';
   gsap.set(greetingEl, { autoAlpha: 0, y: 15 });
   gsap.set(counterWrapperEl, { autoAlpha: 0, y: 15 });
 
+  const tl = gsap.timeline();
+
+  // ── Step 1: Greeting "नमस्ते / NAMASTE" ───────────────────────────────
   tl.to(greetingEl, {
     autoAlpha: 1,
     y: 0,
-    duration: 0.7,
-    ease: 'power3.out',
-    delay: 0.1
+    duration: 0.6,
+    ease: 'power3.out'
   })
   .to(greetingEl, {
     autoAlpha: 0,
     y: -15,
-    duration: 0.5,
+    duration: 0.45,
     ease: 'power2.in',
-    delay: 0.6
+    delay: 0.5,
+    onComplete: () => {
+      // Completely hide greeting element to avoid layout overlap
+      greetingEl.style.display = 'none';
+      counterWrapperEl.style.display = 'flex';
+    }
   })
+
+  // ── Step 2: Percentage Counter & Attribution ───────────────────────────
   .to(counterWrapperEl, {
     autoAlpha: 1,
     y: 0,
     duration: 0.5,
     ease: 'power3.out'
-  }, '-=0.1');
-
-  // 2. Animate counter to 100%
-  // Individual column delays matching reference image 3
-  const colDelays = [0.08, 0.22, 0.0, 0.28, 0.14];
-  const colDurations = [1.0, 1.15, 0.95, 1.2, 1.05];
-
-  tl.to(progressObj, {
+  })
+  .to(progressObj, {
     value: 100,
-    duration: 1.6,
+    duration: 1.5,
     ease: 'power1.inOut',
     onUpdate: () => {
       const current = Math.floor(progressObj.value);
@@ -81,10 +83,9 @@ export function initPreloader(onCompleteCallback) {
     }
   });
 
-  // Ensure window is loaded before triggering exit
+  // ── Step 3: Exit Curtain Lift Reveal ──────────────────────────────────
   tl.call(() => {
     const triggerExit = () => {
-      // 3. Fade out counter text
       const exitTl = gsap.timeline({
         onComplete: () => {
           preloader.style.display = 'none';
@@ -95,14 +96,18 @@ export function initPreloader(onCompleteCallback) {
         }
       });
 
+      // Fade out counter
       exitTl.to(counterWrapperEl, {
         autoAlpha: 0,
-        y: -20,
-        duration: 0.4,
+        y: -15,
+        duration: 0.35,
         ease: 'power2.in'
       });
 
-      // 4. Reveal in 5 separate vertical columns, each moving at its own pace
+      // Staggered independent 5-column curtain reveal (as seen in reference)
+      const colDelays = [0.08, 0.22, 0.0, 0.28, 0.14];
+      const colDurations = [1.05, 1.18, 0.95, 1.22, 1.1];
+
       columns.forEach((col, idx) => {
         exitTl.to(col, {
           yPercent: -100,
@@ -116,7 +121,6 @@ export function initPreloader(onCompleteCallback) {
       triggerExit();
     } else {
       window.addEventListener('load', triggerExit, { once: true });
-      // Fallback timer if load event is delayed
       setTimeout(triggerExit, 2500);
     }
   });
