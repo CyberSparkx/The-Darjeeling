@@ -19,6 +19,7 @@ import * as THREE from 'three';
 import gsap from 'gsap';
 import vertexShader   from './shaders/gallery/vertex.glsl';
 import fragmentShader from './shaders/gallery/fragment.glsl';
+import { openModal } from './galleryModal.js';
 
 // ── Gallery data ─────────────────────────────────────────────────────────────
 const GALLERY_ITEMS = [
@@ -98,7 +99,7 @@ function createCard(item, index) {
 }
 
 // ── Mouse handlers ───────────────────────────────────────────────────────────
-function attachMouseHandlers(cardObj) {
+function attachMouseHandlers(cardObj, index) {
   const { canvas, uniforms } = cardObj;
 
   canvas.addEventListener('mousemove', (e) => {
@@ -142,6 +143,9 @@ function attachMouseHandlers(cardObj) {
   canvas.addEventListener('touchend', () => {
     gsap.to(uniforms.uStrength, { value: 0, duration: 1.2, ease: 'power3.out', overwrite: true });
   });
+
+  // Click → open detail modal
+  canvas.addEventListener('click', () => openModal(index));
 }
 
 // ── Public init ───────────────────────────────────────────────────────────────
@@ -153,7 +157,7 @@ export function initGallerySection() {
     const cardObj = createCard(item, i);
     if (!cardObj) return;
     cards.push(cardObj);
-    attachMouseHandlers(cardObj);
+    attachMouseHandlers(cardObj, i);
   });
 
   if (cards.length === 0) return;

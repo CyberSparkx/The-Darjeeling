@@ -3,6 +3,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { initRevealSection } from './revealSection.js';
 import { initVideoSection } from './videoSection.js';
 import { initGallerySection } from './gallerySection.js';
+import { initGalleryModal } from './galleryModal.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,6 +16,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Initialize WebGL Water Ripple Gallery Section
   initGallerySection();
+
+  // Initialize Gallery Detail Modal
+  initGalleryModal();
 
   const header = document.getElementById('main-header');
 
