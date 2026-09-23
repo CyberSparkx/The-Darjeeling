@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Darjeeling</title>
-    <!-- Maximum 2 curated Google Fonts: Space Grotesk (Brand & Headings) + Inter (Clean UI & Nav) -->
+    <!-- Curated Google Fonts: Instrument Serif, Newsreader, and Outfit (Clean UI) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Outfit:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/src/style.css" />
@@ -94,13 +94,6 @@
       <div class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center relative z-10">
         <!-- Left: Text content -->
         <div class="lg:col-span-6 space-y-6 z-20">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#2b2721]/[0.05] border border-[#2b2721]/10 hero-sub">
-            <span class="w-2 h-2 rounded-full bg-[#9a6a3e] animate-pulse"></span>
-            <span class="font-mono text-xs uppercase tracking-[0.2em] text-[#9a6a3e] font-semibold">
-              01 / Eastern Himalayas · 2,042 M
-            </span>
-          </div>
-
           <h1 class="hero-heading font-brand text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-[#2b2721] uppercase leading-[0.92]">
             The Darjeeling
           </h1>
@@ -109,19 +102,21 @@
             Where mist-wrapped pine ridges meet the eternal crown of Kanchenjunga. An archival exploration of Himalayan heritage, vintage botanicals, and living mountain culture.
           </p>
 
-          <!-- Quick Badges & Coordinates -->
-          <div class="hero-badges flex flex-wrap items-center gap-3 sm:gap-4 pt-2 text-xs font-mono text-[#2b2721]/70">
-            <div class="flex items-center gap-2 bg-[#ded8cb]/70 px-3 py-1.5 rounded-lg border border-[#2b2721]/10 shadow-sm">
-              <span class="text-[#9a6a3e] font-semibold">ALT</span>
-              <span class="font-bold text-[#2b2721]">2,042 M</span>
+          <!-- Archival Surveyor Ledger Strip -->
+          <div class="hero-badges archival-ledger-strip">
+            <div class="archival-ledger-item">
+              <span class="archival-ledger-label">Elevation:</span>
+              <span class="archival-ledger-val">2,042 m</span>
             </div>
-            <div class="flex items-center gap-2 bg-[#ded8cb]/70 px-3 py-1.5 rounded-lg border border-[#2b2721]/10 shadow-sm">
-              <span class="text-[#9a6a3e] font-semibold">LOC</span>
-              <span class="font-bold text-[#2b2721]">27.0360° N, 88.2627° E</span>
+            <span class="archival-ledger-sep">/</span>
+            <div class="archival-ledger-item">
+              <span class="archival-ledger-label">Survey:</span>
+              <span class="archival-ledger-val">27.0360° N, 88.2627° E</span>
             </div>
-            <div class="flex items-center gap-2 bg-[#ded8cb]/70 px-3 py-1.5 rounded-lg border border-[#2b2721]/10 shadow-sm">
-              <span class="text-[#9a6a3e] font-semibold">REGION</span>
-              <span class="font-bold text-[#2b2721]">Queen of the Hills</span>
+            <span class="archival-ledger-sep">/</span>
+            <div class="archival-ledger-item">
+              <span class="archival-ledger-label">Station:</span>
+              <span class="archival-ledger-val">Queen of the Hills</span>
             </div>
           </div>
         </div>
@@ -145,8 +140,7 @@
       <!-- Section Header / Architectural Bar -->
       <div class="w-full max-w-7xl mx-auto px-6 md:px-12 pt-16 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
-          <span class="font-mono text-xs uppercase tracking-[0.25em] text-[#9a6a3e] font-semibold">02 / Archival Plates</span>
-          <h2 class="font-brand text-3xl sm:text-5xl font-bold text-[#2b2721] uppercase tracking-tight mt-1">
+          <h2 class="font-brand text-3xl sm:text-5xl font-bold text-[#2b2721] uppercase tracking-tight">
             The Darjeeling Sketchbook
           </h2>
         </div>
@@ -173,9 +167,6 @@
       <!-- Section Header -->
       <div class="w-full max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
         <div class="space-y-2">
-          <span class="font-mono text-xs uppercase tracking-[0.25em] text-[#9a6a3e] font-semibold">
-            03 / WebGL Organic Lens
-          </span>
           <h2 class="font-brand text-3xl sm:text-5xl lg:text-6xl font-bold text-[#2b2721] uppercase tracking-tight">
             Piercing The Veil
           </h2>
@@ -191,23 +182,23 @@
         <!-- WebGL Canvas Mount -->
         <div id="reveal-canvas-container" class="absolute inset-0 w-full h-full"></div>
 
-        <!-- Bottom Interactive Hint Pill -->
-        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 pointer-events-none transition-opacity duration-500 group-hover:opacity-30 opacity-90">
-          <div class="backdrop-blur-md bg-[#ece7dc]/90 text-[#2b2721] px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium tracking-wide shadow-xl border border-[#2b2721]/10 flex items-center gap-2">
-            <svg class="w-4 h-4 text-[#9a6a3e] animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+        <!-- Bottom Interactive Archival Guide Cartouche -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 pointer-events-none transition-opacity duration-500 group-hover:opacity-40 opacity-90">
+          <div class="archival-cartouche">
+            <svg class="w-3.5 h-3.5 text-[#9a6a3e] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9" stroke-width="1.5"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v8M8 12h8" />
             </svg>
-            <span>Move cursor to reveal Ghum Station</span>
+            <span>Hover to part the prayer flags and reveal Ghum Station</span>
           </div>
         </div>
 
       </div>
 
       <!-- Architectural Section Footer Metadata -->
-      <div class="w-full max-w-7xl mx-auto mt-8 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-[#2b2721]/60 tracking-wider">
-        <div>COORDINATES: 27.0267° N, 88.2464° E</div>
-        <div>ALTITUDE: 2,258 M (7,407 FT)</div>
-        <div class="text-[#9a6a3e] font-semibold">THREE.JS / WEBGL / GLSL NOISE</div>
+      <div class="w-full max-w-7xl mx-auto mt-8 flex flex-wrap items-center justify-between gap-4 text-xs font-serif italic text-[#2b2721]/70 tracking-wide">
+        <div>Coordinates: 27.0267° N, 88.2464° E</div>
+        <div>Elevation: 2,258 m (7,407 ft)</div>
       </div>
     </section>
 
@@ -220,9 +211,6 @@
         <!-- Video Heading (positioned above video, fades out on scroll) -->
         <div id="video-header-block" class="absolute top-10 left-0 right-0 w-full max-w-7xl mx-auto px-6 md:px-12 z-20 flex flex-col sm:flex-row sm:items-end justify-between gap-4 transition-all duration-300 pointer-events-none">
           <div class="space-y-1">
-            <span class="font-mono text-xs uppercase tracking-[0.25em] text-[#9a6a3e] font-semibold">
-              04 / Cinematic Chronicle
-            </span>
             <h2 class="font-brand text-3xl sm:text-5xl lg:text-6xl font-bold text-[#2b2721] uppercase tracking-tight">
               The Living Valley
             </h2>
@@ -232,10 +220,10 @@
           </p>
         </div>
 
-        <!-- Expandable Video Card (Starts as prominent card, expands to fill 100vw x 100vh) -->
+        <!-- Expandable Video Card (Starts as elegant centered card, expands to fill 100vw x 100vh) -->
         <div 
           id="video-expand-wrapper"
-          class="relative w-[90vw] max-w-5xl h-[65vh] max-h-[700px] rounded-3xl overflow-hidden shadow-2xl transition-shadow duration-500 bg-black flex items-center justify-center will-change-transform z-10"
+          class="relative w-[78vw] sm:w-[70vw] max-w-3xl lg:max-w-4xl h-[46vh] sm:h-[50vh] max-h-[520px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl transition-shadow duration-500 bg-black flex items-center justify-center will-change-transform z-10"
         >
           <!-- Video Element (Muted, Loop, Playsinline, Always plays continuously) -->
           <video
@@ -250,11 +238,11 @@
           ></video>
 
           <!-- Bottom Floating Center Indicator -->
-          <div class="video-inner-badge absolute bottom-6 left-1/2 -translate-x-1/2 z-20 pointer-events-none flex items-center gap-2 backdrop-blur-md bg-black/50 text-[#ece7dc]/90 px-4 py-2 rounded-full text-xs font-mono tracking-wider border border-white/10">
-            <svg class="w-3.5 h-3.5 text-[#9a6a3e] animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          <div class="video-inner-badge absolute bottom-6 left-1/2 -translate-x-1/2 z-20 pointer-events-none flex items-center gap-2 backdrop-blur-md bg-[#2b2721]/80 text-[#ece7dc] px-4 py-1.5 rounded-sm text-xs font-serif italic tracking-wide border border-[#ece7dc]/20 shadow-lg">
+            <svg class="w-3.5 h-3.5 text-[#ded8cb]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
-            <span>Scroll to expand fullscreen</span>
+            <span>Scroll to expand archival chronicle</span>
           </div>
 
           <!-- Subtle Vignette Overlay for Cinematic Depth -->
@@ -272,9 +260,6 @@
       <!-- Section Header -->
       <div class="w-full max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
         <div class="space-y-2">
-          <span class="font-mono text-xs uppercase tracking-[0.25em] text-[#9a6a3e] font-semibold">
-            05 / Living Frames
-          </span>
           <h2 class="font-brand text-3xl sm:text-5xl lg:text-6xl font-bold text-[#2b2721] uppercase tracking-tight">
             Darjeeling, Now
           </h2>
@@ -304,7 +289,7 @@
             <p class="font-serif italic text-[11px] text-[#ece7dc]/70 leading-snug">
               The colourful hillside town glows beneath the eternal white crown of Kanchenjunga.
             </p>
-            <span class="font-mono text-[10px] text-[#ece7dc]/30 tracking-wider mt-1">Present Day</span>
+            <span class="font-serif italic text-[11px] text-[#ece7dc]/40 tracking-wider mt-1">Present Day</span>
           </div>
         </div>
 
@@ -324,7 +309,7 @@
             <p class="font-serif italic text-[11px] text-[#ece7dc]/70 leading-snug">
               Amber headlights pierce the monsoon mist at India's highest railway station — 2,258 m.
             </p>
-            <span class="font-mono text-[10px] text-[#ece7dc]/30 tracking-wider mt-1">Present Day</span>
+            <span class="font-serif italic text-[11px] text-[#ece7dc]/40 tracking-wider mt-1">Present Day</span>
           </div>
         </div>
 
@@ -344,7 +329,7 @@
             <p class="font-serif italic text-[11px] text-[#ece7dc]/70 leading-snug">
               The city of white orchids sparkles against the Himalayan dark — a galaxy on the hillside.
             </p>
-            <span class="font-mono text-[10px] text-[#ece7dc]/30 tracking-wider mt-1">Present Day</span>
+            <span class="font-serif italic text-[11px] text-[#ece7dc]/40 tracking-wider mt-1">Present Day</span>
           </div>
         </div>
 
@@ -364,16 +349,15 @@
             <p class="font-serif italic text-[11px] text-[#ece7dc]/70 leading-snug">
               Druk Sangag Choling blazes at dusk, its gilded rooftops catching the last rays of the valley.
             </p>
-            <span class="font-mono text-[10px] text-[#ece7dc]/30 tracking-wider mt-1">Present Day</span>
+            <span class="font-serif italic text-[11px] text-[#ece7dc]/40 tracking-wider mt-1">Present Day</span>
           </div>
         </div>
 
       </div>
 
       <!-- Section footer watermark -->
-      <div class="w-full max-w-7xl mx-auto mt-10 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-[#2b2721]/50 tracking-wider">
-        <div>COLLECTION: 4 FRAMES · DARJEELING HILLS · PRESENT DAY</div>
-        <div class="text-[#9a6a3e] font-semibold">THREE.JS / GLSL WATER RIPPLE</div>
+      <div class="w-full max-w-7xl mx-auto mt-10 flex flex-wrap items-center justify-between gap-4 text-xs font-serif italic text-[#2b2721]/60 tracking-wide">
+        <div>Collection: 4 Photographic Frames · Darjeeling Hills · Present Day</div>
       </div>
     </section>
 
@@ -385,9 +369,6 @@
       <!-- Section Header -->
       <div id="route-header-block" class="w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col sm:flex-row sm:items-center justify-between gap-4 z-20 mb-2">
         <div class="space-y-1">
-          <span class="font-mono text-xs uppercase tracking-[0.25em] text-[#9a6a3e] font-semibold">
-            06 / Mountain Highway Expedition
-          </span>
           <h2 class="font-brand text-3xl sm:text-5xl lg:text-6xl font-bold text-[#2b2721] uppercase tracking-tight">
             Hill Cart Road (NH 55)
           </h2>
@@ -396,21 +377,21 @@
           </p>
         </div>
         
-        <!-- Live HUD Telemetry Card -->
-        <div class="flex items-center gap-4 bg-[#ded8cb]/85 backdrop-blur-md px-5 py-2.5 rounded-2xl border border-[#2b2721]/15 shadow-xl shrink-0">
-          <div class="flex flex-col">
-            <span class="font-mono text-[9px] text-[#2b2721]/50 uppercase tracking-widest">Altitude</span>
-            <span id="route-hud-altitude" class="font-mono text-base font-bold text-[#9a6a3e]">120 M</span>
+        <!-- Mountain Highway Survey Plate -->
+        <div class="survey-brass-plate shrink-0">
+          <div class="survey-brass-metric">
+            <span class="survey-brass-label">Altitude</span>
+            <span id="route-hud-altitude" class="survey-brass-val text-[#9a6a3e]">120 m</span>
           </div>
-          <div class="w-px h-7 bg-[#2b2721]/15"></div>
-          <div class="flex flex-col">
-            <span class="font-mono text-[9px] text-[#2b2721]/50 uppercase tracking-widest">Distance</span>
-            <span id="route-hud-distance" class="font-mono text-base font-bold text-[#2b2721]">0.0 KM</span>
+          <div class="survey-brass-divider"></div>
+          <div class="survey-brass-metric">
+            <span class="survey-brass-label">Distance</span>
+            <span id="route-hud-distance" class="survey-brass-val text-[#2b2721]">0.0 km</span>
           </div>
-          <div class="w-px h-7 bg-[#2b2721]/15"></div>
-          <div class="flex flex-col">
-            <span class="font-mono text-[9px] text-[#2b2721]/50 uppercase tracking-widest">Ascent</span>
-            <span id="route-hud-progress" class="font-mono text-base font-bold text-[#c84b31]">0%</span>
+          <div class="survey-brass-divider"></div>
+          <div class="survey-brass-metric">
+            <span class="survey-brass-label">Ascent</span>
+            <span id="route-hud-progress" class="survey-brass-val text-[#c84b31]">0%</span>
           </div>
         </div>
       </div>
@@ -554,7 +535,6 @@
       <!-- Section Footer Watermark -->
       <div class="w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-[#2b2721]/50 tracking-wider z-20">
         <div>ROUTE: NH 55 HILL CART ROAD · 77 KM MOUNTAIN ASCENT</div>
-        <div class="text-[#9a6a3e] font-semibold">GSAP MOTIONPATH / SCROLLTRIGGER PINNED</div>
       </div>
     </section>
 
@@ -566,14 +546,11 @@
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 pb-10 border-b border-[#2b2721]/10">
           
           <!-- Left: Designer Attribution & Brief Statement -->
-          <div class="space-y-2.5 max-w-md">
-            <span class="font-mono text-xs uppercase tracking-[0.25em] text-[#9a6a3e] font-semibold">
-              Project Archive · 2026
-            </span>
-            <h3 class="font-brand text-xl sm:text-2xl font-bold text-[#2b2721] tracking-tight">
-              Designed &amp; Developed by <span class="text-[#9a6a3e] underline decoration-[#9a6a3e]/40 underline-offset-4">Naren Roy</span>
+          <div class="space-y-2 max-w-md">
+            <h3 class="font-sans-clean text-base sm:text-lg font-medium text-[#2b2721] tracking-tight">
+              Designed &amp; Developed by <span class="text-[#8c592a] font-semibold underline decoration-[#8c592a]/50 underline-offset-4">Naren Roy</span>
             </h3>
-            <p class="font-serif italic text-sm sm:text-base text-[#2b2721]/70 leading-relaxed">
+            <p class="font-serif italic text-sm text-[#2b2721]/80 leading-relaxed">
               An interactive 3D WebGL tribute to the heritage, mist-wrapped ridges, and eternal crown of the Eastern Himalayas.
             </p>
           </div>

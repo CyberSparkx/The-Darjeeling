@@ -87,8 +87,20 @@ export function initFooterRipple() {
     textCtx.clearRect(0, 0, textCanvas.width, textCanvas.height);
     textCtx.scale(dpr, dpr);
 
-    // Font setup
-    const fontSize = Math.min(w * 0.165, 240);
+    // Auto-fit "DARJEELING" precisely with generous 12% horizontal margins so edges are never cut off
+    const maxTextWidth = w * 0.86;
+    let fontSize = Math.min(w * 0.12, 180);
+    textCtx.font = `900 ${fontSize}px 'Space Grotesk', -apple-system, sans-serif`;
+    let measuredWidth = textCtx.measureText('DARJEELING').width;
+
+    if (measuredWidth > maxTextWidth && measuredWidth > 0) {
+      fontSize = fontSize * (maxTextWidth / measuredWidth);
+    }
+    const maxTextHeight = h * 0.72;
+    if (fontSize > maxTextHeight) {
+      fontSize = maxTextHeight;
+    }
+
     textCtx.font = `900 ${fontSize}px 'Space Grotesk', -apple-system, sans-serif`;
     textCtx.textAlign = 'center';
     textCtx.textBaseline = 'middle';

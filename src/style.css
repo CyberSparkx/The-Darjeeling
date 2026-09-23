@@ -1,5 +1,29 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/landing-pages/meng-to-sketchbook/instrument-serif.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/landing-pages/meng-to-sketchbook/instrument-serif-italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 300 600;
+  font-display: swap;
+  src: url('/landing-pages/meng-to-sketchbook/newsreader.woff2') format('woff2');
+}
+
 @layer base {
   * {
     margin: 0;
@@ -7,16 +31,20 @@
     box-sizing: border-box;
   }
 
-  html, body {
-    scrollbar-width: none !important; /* Firefox */
-    -ms-overflow-style: none !important; /* IE and Edge */
+  html,
+  body {
+    scrollbar-width: none !important;
+    /* Firefox */
+    -ms-overflow-style: none !important;
+    /* IE and Edge */
     overflow-x: hidden;
     width: 100%;
     margin: 0;
     padding: 0;
   }
 
-  html.lenis, html.lenis body {
+  html.lenis,
+  html.lenis body {
     height: auto;
   }
 
@@ -45,7 +73,7 @@
     min-height: 100vh;
     background-color: #ece7dc;
     color: #2b2721;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
     -webkit-font-smoothing: antialiased;
     position: relative;
   }
@@ -74,7 +102,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(236,231,220,0.4) 0%, rgba(236,231,220,0.7) 50%, #ece7dc 100%);
+  background: linear-gradient(180deg, rgba(236, 231, 220, 0.4) 0%, rgba(236, 231, 220, 0.7) 50%, #ece7dc 100%);
 }
 
 /* Botanical wash background matching the archival sketchbook */
@@ -91,7 +119,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(236,231,220,0.3) 0%, rgba(236,231,220,0.65) 50%, #ece7dc 100%);
+  background: linear-gradient(180deg, rgba(236, 231, 220, 0.3) 0%, rgba(236, 231, 220, 0.65) 50%, #ece7dc 100%);
 }
 
 .site-botany {
@@ -115,7 +143,16 @@
 }
 
 .font-brand {
-  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+}
+
+.font-mono {
+  font-family: 'Newsreader', Georgia, 'Times New Roman', serif !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.font-sans-clean {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* Subtle link hover underline or transitions */
@@ -163,7 +200,7 @@
 /* ─── Gallery Section ──────────────────────────────────────────────────────── */
 .gallery-card {
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, box-shadow;
 }
 
@@ -184,33 +221,13 @@
   border-top: 1px solid rgba(236, 231, 220, 0.06);
 }
 
-.gallery-card { cursor: pointer; }
+.gallery-card {
+  cursor: pointer;
+}
 
 /* ═══════════════════════════════════════════════════════════════════════════
    GALLERY DETAIL MODAL — Archival Editorial Design
    ═══════════════════════════════════════════════════════════════════════════ */
-
-@font-face {
-  font-family: 'Instrument Serif';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/landing-pages/meng-to-sketchbook/instrument-serif.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Instrument Serif';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/landing-pages/meng-to-sketchbook/instrument-serif-italic.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Newsreader';
-  font-style: normal;
-  font-weight: 300 600;
-  font-display: swap;
-  src: url('/landing-pages/meng-to-sketchbook/newsreader.woff2') format('woff2');
-}
 
 /* ── Modal Canvas Shell ─────────────────────────────────────────────────── */
 #gallery-modal {
@@ -230,7 +247,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(236,231,220,0.15) 0%, rgba(236,231,220,0.5) 50%, #ece7dc 100%);
+  background: linear-gradient(180deg, rgba(236, 231, 220, 0.15) 0%, rgba(236, 231, 220, 0.5) 50%, #ece7dc 100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -269,6 +286,7 @@
   gap: clamp(20px, 2.5vw, 36px);
   align-items: center;
 }
+
 .gm-tab {
   font-family: 'Newsreader', Georgia, serif;
   font-size: clamp(15px, 1.15vw, 17px);
@@ -280,9 +298,11 @@
   padding: 4px 0;
   transition: color 0.2s ease;
 }
+
 .gm-tab:hover {
   color: #2b2721;
 }
+
 .gm-tab.active {
   color: #2b2721;
   text-decoration: underline;
@@ -296,18 +316,21 @@
   align-items: flex-end;
   gap: 8px;
 }
+
 .gm-author {
   font-family: 'Newsreader', Georgia, serif;
   font-size: clamp(14px, 1vw, 16px);
   color: rgba(43, 39, 33, 0.65);
   letter-spacing: 0.01em;
 }
+
 .gm-author-name {
   color: #2b2721;
   text-decoration: underline;
   text-underline-offset: 3px;
   cursor: default;
 }
+
 .gm-close-text-btn {
   background: none;
   border: none;
@@ -322,6 +345,7 @@
   opacity: 0.75;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
+
 .gm-close-text-btn:hover {
   opacity: 1;
   transform: translateX(-2px);
@@ -345,12 +369,14 @@
   flex-direction: column;
   justify-content: center;
 }
+
 .gm-mega-title {
   display: flex;
   flex-direction: column;
   gap: 0;
   margin: 0;
 }
+
 .gm-t1,
 .gm-t2 {
   display: block;
@@ -370,6 +396,7 @@
   align-self: stretch;
   padding: 12px 0;
 }
+
 .gm-portrait-frame {
   border: 1px solid rgba(43, 39, 33, 0.12);
   box-shadow:
@@ -378,6 +405,7 @@
   background: #ded8cb;
   max-height: 72vh;
 }
+
 .gm-portrait-img {
   display: block;
   height: 68vh;
@@ -393,8 +421,15 @@
   flex-direction: column;
   max-width: 440px;
 }
-.gm-tab-content { display: none; }
-.gm-tab-content.active { display: block; }
+
+.gm-tab-content {
+  display: none;
+}
+
+.gm-tab-content.active {
+  display: block;
+}
+
 .gm-body-p {
   font-family: 'Newsreader', Georgia, serif;
   font-size: clamp(14px, 1.05vw, 16px);
@@ -410,15 +445,19 @@
     flex-wrap: wrap;
     gap: 16px;
   }
+
   .gm-tabs {
     gap: 18px;
   }
+
   .gm-tab {
     font-size: 14px;
   }
+
   .gm-author {
     font-size: 13px;
   }
+
   .gm-stage {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
@@ -427,21 +466,27 @@
     overflow-y: auto;
     align-items: start;
   }
+
   .gm-stage-left {
     padding-top: 10px;
   }
-  .gm-t1, .gm-t2 {
+
+  .gm-t1,
+  .gm-t2 {
     font-size: 34px;
   }
+
   .gm-stage-center {
     padding: 0;
   }
+
   .gm-portrait-img {
     height: auto;
     max-height: 48vh;
     width: 100%;
     max-width: 100%;
   }
+
   .gm-stage-right {
     max-width: 100%;
     padding-bottom: 24px;
@@ -473,19 +518,20 @@
 }
 
 .svg-city-title {
-  font-family: 'Space Grotesk', -apple-system, sans-serif;
-  font-size: 24px;
-  font-weight: 700;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 26px;
+  font-weight: 400;
   fill: #2b2721 !important;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.02em;
 }
 
 .svg-city-meta {
-  font-family: monospace, sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  fill: rgba(43, 39, 33, 0.65);
-  letter-spacing: 0.05em;
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 500;
+  fill: rgba(43, 39, 33, 0.75);
+  letter-spacing: 0.02em;
 }
 
 /* Subtle glow filter when vehicle arrives without changing coordinates */
@@ -505,6 +551,101 @@
 
 .vehicle-svg-img {
   filter: drop-shadow(0 8px 14px rgba(43, 39, 33, 0.35));
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ARCHIVAL EDITORIAL DESIGN SYSTEM (NON-AI / VINTAGE BOTANICAL SKETCHBOOK)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Surveyor ledger strip for Hero coordinates */
+.archival-ledger-strip {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 8px 16px;
+  border-top: 1px solid rgba(43, 39, 33, 0.22);
+  border-bottom: 1px solid rgba(43, 39, 33, 0.22);
+  background: rgba(236, 231, 220, 0.5);
+  font-family: 'Newsreader', Georgia, serif;
+}
+
+.archival-ledger-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 13px;
+  color: #2b2721;
+}
+
+.archival-ledger-label {
+  font-style: italic;
+  color: #9a6a3e;
+  font-size: 12px;
+}
+
+.archival-ledger-val {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.archival-ledger-sep {
+  color: rgba(43, 39, 33, 0.25);
+  user-select: none;
+}
+
+/* Archival guide cartouche for interactive reveal */
+.archival-cartouche {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  background: #ece7dc;
+  border: 1px solid rgba(43, 39, 33, 0.25);
+  box-shadow: 0 4px 18px rgba(43, 39, 33, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 13px;
+  font-style: italic;
+  color: #2b2721;
+  border-radius: 2px;
+}
+
+/* D.H.R. Survey Plate for Mountain Highway HUD */
+.survey-brass-plate {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  padding: 8px 20px;
+  background: #ded8cb;
+  border: 1px solid rgba(43, 39, 33, 0.28);
+  border-radius: 2px;
+  box-shadow: 0 3px 12px rgba(43, 39, 33, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  font-family: 'Newsreader', Georgia, serif;
+}
+
+.survey-brass-metric {
+  display: flex;
+  flex-direction: column;
+}
+
+.survey-brass-label {
+  font-size: 11px;
+  font-style: italic;
+  color: rgba(43, 39, 33, 0.65);
+  line-height: 1.2;
+}
+
+.survey-brass-val {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.1;
+  color: #2b2721;
+}
+
+.survey-brass-divider {
+  width: 1px;
+  height: 24px;
+  background: rgba(43, 39, 33, 0.2);
 }
 
 /* end of stylesheet */
