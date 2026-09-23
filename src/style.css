@@ -176,6 +176,40 @@
   width: 100%;
 }
 
+/* ── Ambient Audio Toggle Animation ────────────────────────────────────────── */
+@keyframes audioWave1 {
+  0%, 100% { height: 4px; }
+  50% { height: 12px; }
+}
+
+@keyframes audioWave2 {
+  0%, 100% { height: 12px; }
+  50% { height: 5px; }
+}
+
+@keyframes audioWave3 {
+  0%, 100% { height: 6px; }
+  50% { height: 14px; }
+}
+
+#bgm-toggle-btn.is-playing .sound-wave-1 {
+  animation: audioWave1 1.1s ease-in-out infinite;
+}
+
+#bgm-toggle-btn.is-playing .sound-wave-2 {
+  animation: audioWave2 0.85s ease-in-out infinite;
+}
+
+#bgm-toggle-btn.is-playing .sound-wave-3 {
+  animation: audioWave3 1.25s ease-in-out infinite;
+}
+
+#bgm-toggle-btn .sound-wave.paused {
+  animation: none !important;
+  height: 2px !important;
+  opacity: 0.45;
+}
+
 #canvas {
   position: fixed;
   inset: 0;

@@ -11,6 +11,7 @@ import { initRouteSection } from './routeSection.js';
 import { initFooterRipple } from './footerRipple.js';
 import { initHeroRipple } from './heroRipple.js';
 import { initPreloader } from './preloader.js';
+import { audioManager } from './audioManager.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -63,12 +64,18 @@ window.addEventListener('DOMContentLoaded', () => {
   // Initialize Footer Typography WebGL Water Ripple Effect
   initFooterRipple();
 
+  // Initialize Background Ambient Music Controller
+  audioManager.init();
+
   const header = document.getElementById('main-header');
 
   // Page Entrance Stagger Animation triggered when Preloader curtain reveals
   const runEntranceAnimation = () => {
     // Re-enable smooth scrolling
     lenis.start();
+
+    // Start background ambient music when landing page appears
+    audioManager.startLandingPageAudio();
 
     const entranceTl = gsap.timeline({
       defaults: {

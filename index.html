@@ -66,8 +66,23 @@
           The Darjeeling
         </a>
 
-        <!-- Right Side: Contact Link & Clean Square/Subtle-Rounded Login Button -->
-        <div class="flex items-center gap-6 sm:gap-8">
+        <!-- Right Side: Ambient Audio Button, Contact Link & Clean Login Button -->
+        <div class="flex items-center gap-5 sm:gap-7">
+          <!-- Ambient BGM Toggle Button -->
+          <button
+            id="bgm-toggle-btn"
+            type="button"
+            class="nav-elem group flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2b2721]/15 bg-[#ded8cb]/60 hover:bg-[#ded8cb] transition-all text-[#2b2721]/80 hover:text-[#2b2721] cursor-pointer"
+            aria-label="Toggle background audio"
+          >
+            <span class="sound-wave-bars flex items-center gap-[2px] h-3 w-3 justify-center">
+              <span class="sound-wave sound-wave-1 w-[2px] h-2 bg-[#9a6a3e] rounded-full"></span>
+              <span class="sound-wave sound-wave-2 w-[2px] h-3 bg-[#9a6a3e] rounded-full"></span>
+              <span class="sound-wave sound-wave-3 w-[2px] h-1.5 bg-[#9a6a3e] rounded-full"></span>
+            </span>
+            <span class="sound-label font-sans-clean text-[11px] font-medium tracking-wider uppercase">Audio</span>
+          </button>
+
           <!-- Contact Navigation Item -->
           <a
             href="#contact"
